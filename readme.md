@@ -82,13 +82,13 @@ Create Docker Image
 #### Build the Docker image:
 
 ```bash
-docker build -t localhost:32000/SlackBackupBot:v1 .
+docker build -t localhost:32000/slackbackupbot:v1 .
 ```
 
 #### Push the image to the local registry:
 
 ```bash
-docker push localhost:32000/SlackBackupBot:v1
+docker push localhost:32000/slackbackupbot:v1
 ```
 
 ## Creating Kubernetes Secrets

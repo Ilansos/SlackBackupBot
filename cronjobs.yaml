@@ -13,7 +13,7 @@ spec:
                 spec:
                     containers:
                     - name: slackbot
-                      image: localhost:32000/SlackBackupBot:v2
+                      image: localhost:32000/slackbackupbot:v1
                       command: ["python", "SlackBackupBot.py"]
                       env:
                       - name: SLACK_API_KEY
