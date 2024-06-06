@@ -1,0 +1,33 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+    name: slackbot-cronjob
+spec:
+    schedule: "0 0 */85 * *"  # Run once every 85 days at midnight
+    jobTemplate:
+        spec:
+            template:
+                metadata:
+                    labels:
+                        app: slackbot
+                spec:
+                    containers:
+                    - name: slackbot
+                      image: localhost:32000/SlackBackupBot:v2
+                      command: ["python", "SlackBackupBot.py"]
+                      env:
+                      - name: SLACK_API_KEY
+                        valueFrom:
+                            secretKeyRef:
+                                name: slackbot-secrets
+                                key: SLACK_API_KEY
+                      - name: CHANNELS
+                        valueFrom:
+                            secretKeyRef:
+                                name: slackbot-secrets
+                                key: CHANNELS
+                    restartPolicy: OnFailure
+
+
+
+
