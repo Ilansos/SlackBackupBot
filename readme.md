@@ -1,10 +1,10 @@
 # Slack Bot Message Backup
 
-This repository contains a Python script (slackbot.py) designed to backup messages from a Slack channel before they are deleted (on the Slack free plan). The script is deployed as a Kubernetes CronJob using microk8s.
+This repository contains a Python script (SlackBackupBot.py) designed to backup messages from a Slack channel before they are deleted (on the Slack free plan). The script is deployed as a Kubernetes CronJob using microk8s.
 
 ## What does the script do?
 
-### The slackbot.py script performs the following actions:
+### The SlackBackupBot.py script performs the following actions:
 
     Retrieves messages from a specified source Slack channel.
     Formats the messages and sender information.
