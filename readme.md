@@ -88,7 +88,7 @@ docker build -t localhost:32000/SlackBackupBot:v1 .
 #### Push the image to the local registry:
 
 ```bash
-su localhost:32000/SlackBackupBot:v1
+docker push localhost:32000/SlackBackupBot:v1
 ```
 
 ## Creating Kubernetes Secrets
@@ -138,7 +138,7 @@ microk8s kubectl get jobs
 
 Find the pod executed by the job:
 ``` bash
-kubectl get pods --selector=job-name=<last-job>
+microk8s kubectl get pods --selector=job-name=<last-job>
 ```
 
 View logs of the last executed pod:
